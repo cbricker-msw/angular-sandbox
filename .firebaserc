@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "chewie-ce7f7": {
+      "hosting": {
+        "parking-lot": [
+          "chewie-ce7f7"
+        ]
+      }
+    }
+  }
+}
