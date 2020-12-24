@@ -19,6 +19,21 @@ export class FirestoreService {
             );
     }
 
+    getDocument<T>(path: string): Observable<T | null> {
+        return this.firestore.doc<T>(path)
+            .snapshotChanges()
+            .pipe(
+                map((snapshot) => {
+                    return snapshot.payload.exists
+                        ? {
+                            ...snapshot.payload.data() as T,
+                            id: snapshot.payload.id
+                        }
+                        : null;
+                })
+            );
+    }
+
     private mapIdsToCollectionObjects<T>(actions: DocumentChangeAction<T>[]): T[] {
         return actions.map((action: DocumentChangeAction<T>) => {
             const data = action.payload.doc.data() as T;

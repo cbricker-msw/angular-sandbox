@@ -7,12 +7,16 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { StoreModule } from '@ngrx/store';
-import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { routerReducer, RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SessionReactiveComponent } from './components/session-reactive/session-reactive.component';
+import { CustomSerializer } from './store/reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        SessionReactiveComponent
     ],
     imports: [
         BrowserModule,
@@ -23,9 +27,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
             router: routerReducer
         }),
         StoreRouterConnectingModule.forRoot(),
+        StoreDevtoolsModule.instrument(),
         BrowserAnimationsModule
     ],
-    providers: [],
+    providers: [
+        { provide: RouterStateSerializer, useClass: CustomSerializer }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
