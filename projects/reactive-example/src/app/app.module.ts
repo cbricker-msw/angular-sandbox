@@ -15,9 +15,11 @@ import { CustomSerializer } from './store/reducers';
 import { SessionListComponent } from './components/session-list/session-list.component';
 import { SessionViewReactiveComponent } from './components/reactive/session-view-reactive/session-view-reactive.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { SessionAgendaDetailsComponent } from './components/reactive/session-agenda-details/session-agenda-details.component';
+import { SessionAgendaDetailsComponent } from './components/session-agenda-details/session-agenda-details.component';
 import { AgendaReactiveComponent } from './components/reactive/agenda-reactive/agenda-reactive.component';
-import { AgendaActivityItemComponent } from './components/reactive/agenda-activity-item/agenda-activity-item.component';
+import { AgendaActivityItemComponent } from './components/agenda-activity-item/agenda-activity-item.component';
+import { SessionViewContainerComponent } from './components/non-reactive/session-view-container/session-view-container.component';
+import { SessionViewComponent } from './components/non-reactive/session-view/session-view.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +28,9 @@ import { AgendaActivityItemComponent } from './components/reactive/agenda-activi
         SessionViewReactiveComponent,
         SessionAgendaDetailsComponent,
         AgendaReactiveComponent,
-        AgendaActivityItemComponent
+        AgendaActivityItemComponent,
+        SessionViewContainerComponent,
+        SessionViewComponent
     ],
     imports: [
         BrowserModule,

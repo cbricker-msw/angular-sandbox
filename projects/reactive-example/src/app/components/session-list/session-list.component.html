@@ -11,7 +11,10 @@
     </div>
     <div *ngFor="let session of vm.sessions">
       <div>
-        <a [routerLink]="[ '/session', session.id ]">{{ session.name }}</a>
+        <a [routerLink]="[ '/session-reactive', session.id ]">{{ session.name }} - Reactive</a>
+      </div>
+      <div>
+        <a [routerLink]="[ '/session', session.id ]">{{ session.name }} - Non-Reactive</a>
       </div>
     </div>
   </div>

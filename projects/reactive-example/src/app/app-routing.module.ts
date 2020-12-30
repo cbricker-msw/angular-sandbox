@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SessionListComponent } from './components/session-list/session-list.component';
 import { SessionViewReactiveComponent } from './components/reactive/session-view-reactive/session-view-reactive.component';
+import { SessionViewContainerComponent } from './components/non-reactive/session-view-container/session-view-container.component';
 
 const routes: Routes = [
     {
@@ -9,8 +10,12 @@ const routes: Routes = [
         component: SessionListComponent
     },
     {
-        path: 'session/:sessionId',
+        path: 'session-reactive/:sessionId',
         component: SessionViewReactiveComponent
+    },
+    {
+        path: 'session/:sessionId',
+        component: SessionViewContainerComponent
     }
 ];
 

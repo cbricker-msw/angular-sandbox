@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Session } from '../../../models/session.model';
+import { Session } from '../../models/session.model';
 
 @Component({
     selector: 'app-session-agenda-details',

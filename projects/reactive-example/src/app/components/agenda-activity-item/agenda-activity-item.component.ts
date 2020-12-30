@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
-import { Activity } from '../../../models/activity.model';
+import { Activity } from '../../models/activity.model';
 
 @Component({
     selector: 'app-agenda-activity-item',
