@@ -1,22 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { StoreModule } from '@ngrx/store';
 import { routerReducer, RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SessionReactiveComponent } from './components/session-reactive/session-reactive.component';
-import { CustomSerializer } from './store/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
+import { CustomSerializer } from './store/reducers';
+import { SessionListComponent } from './components/session-list/session-list.component';
+import { SessionViewReactiveComponent } from './components/reactive/session-view-reactive/session-view-reactive.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { SessionAgendaDetailsComponent } from './components/reactive/session-agenda-details/session-agenda-details.component';
+import { AgendaReactiveComponent } from './components/reactive/agenda-reactive/agenda-reactive.component';
+import { AgendaActivityItemComponent } from './components/reactive/agenda-activity-item/agenda-activity-item.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        SessionReactiveComponent
+        SessionListComponent,
+        SessionViewReactiveComponent,
+        SessionAgendaDetailsComponent,
+        AgendaReactiveComponent,
+        AgendaActivityItemComponent
     ],
     imports: [
         BrowserModule,
@@ -28,7 +38,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
         }),
         StoreRouterConnectingModule.forRoot(),
         StoreDevtoolsModule.instrument(),
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+
+        // Material Modules
+        MatSidenavModule,
+
     ],
     providers: [
         { provide: RouterStateSerializer, useClass: CustomSerializer }

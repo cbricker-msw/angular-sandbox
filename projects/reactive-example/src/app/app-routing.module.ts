@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SessionReactiveComponent } from './components/session-reactive/session-reactive.component';
+import { SessionListComponent } from './components/session-list/session-list.component';
+import { SessionViewReactiveComponent } from './components/reactive/session-view-reactive/session-view-reactive.component';
 
 const routes: Routes = [
     {
+        path: '',
+        component: SessionListComponent
+    },
+    {
         path: 'session/:sessionId',
-        component: SessionReactiveComponent
+        component: SessionViewReactiveComponent
     }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [ RouterModule.forRoot(routes) ],
+    exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -1,8 +1,0 @@
-<div *ngIf="(vm$ | async) as vm">
-  <div *ngIf="vm.isLoading">
-    Loading...
-  </div>
-  <div *ngIf="!vm.isLoading">
-    {{ vm.session && vm.session.name || 'No Session Found' }}
-  </div>
-</div>

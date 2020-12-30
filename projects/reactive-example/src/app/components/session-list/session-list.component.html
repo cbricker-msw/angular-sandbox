@@ -1,0 +1,18 @@
+<div *ngIf="(vm$ | async) as vm">
+  <div>
+    <h1>Sessions</h1>
+  </div>
+  <div *ngIf="vm.isLoading">
+    Searching for sessions...
+  </div>
+  <div *ngIf="!vm.isLoading">
+    <div *ngIf="vm.sessions.length === 0">
+      No sessions Found
+    </div>
+    <div *ngFor="let session of vm.sessions">
+      <div>
+        <a [routerLink]="[ '/session', session.id ]">{{ session.name }}</a>
+      </div>
+    </div>
+  </div>
+</div>

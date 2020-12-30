@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SessionReactiveComponent } from './session-reactive.component';
+import { AgendaReactiveComponent } from './agenda-reactive.component';
 
-describe('SessionReactiveComponent', () => {
-    let component: SessionReactiveComponent;
-    let fixture: ComponentFixture<SessionReactiveComponent>;
+describe('AgendaReactiveComponent', () => {
+    let component: AgendaReactiveComponent;
+    let fixture: ComponentFixture<AgendaReactiveComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ SessionReactiveComponent ]
+            declarations: [ AgendaReactiveComponent ]
         })
             .compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(SessionReactiveComponent);
+        fixture = TestBed.createComponent(AgendaReactiveComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

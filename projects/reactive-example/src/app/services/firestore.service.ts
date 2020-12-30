@@ -34,6 +34,14 @@ export class FirestoreService {
             );
     }
 
+    getDocumentsByProperty<T>(path: string, property: string, value: any): Observable<T[]> {
+        return this.firestore.collection<T>(path, ref => ref.where(property, '==', value))
+            .snapshotChanges()
+            .pipe(
+                map(this.mapIdsToCollectionObjects)
+            );
+    }
+
     private mapIdsToCollectionObjects<T>(actions: DocumentChangeAction<T>[]): T[] {
         return actions.map((action: DocumentChangeAction<T>) => {
             const data = action.payload.doc.data() as T;

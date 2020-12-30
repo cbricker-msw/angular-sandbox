@@ -1,0 +1,21 @@
+<div>
+  <h1>Agenda</h1>
+</div>
+<div *ngIf="(vm$ | async) as vm">
+  <div *ngIf="vm.isLoading">
+    Loading...
+  </div>
+  <div *ngIf="!vm.isLoading">
+    <div *ngIf="vm.activities.length === 0">
+      <h3>No activities found</h3>
+    </div>
+    <div *ngFor="let activity of vm.activities; trackBy: trackByActivities">
+      <app-agenda-activity-item
+        [activity]="activity"
+        [selectedActivityId]="vm.selectedActivityId"
+        (selectActivity)="onSelectActivity($event)"
+      >
+      </app-agenda-activity-item>
+    </div>
+  </div>
+</div>

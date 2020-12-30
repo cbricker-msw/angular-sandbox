@@ -1,0 +1,20 @@
+<div *ngIf="(vm$ | async) as vm">
+  <div *ngIf="vm.isLoading">
+    Loading...
+  </div>
+  <div *ngIf="!vm.isLoading">
+    <mat-sidenav-container>
+      <mat-sidenav mode="side" opened>
+        <app-session-agenda-details
+          class="session-data"
+          [session]="vm.session!">
+        </app-session-agenda-details>
+        <app-agenda-reactive class="agenda-container">
+        </app-agenda-reactive>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        Selected Activity
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+    </div>
+</div>

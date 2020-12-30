@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+
+import { getSessionId, State } from '../../../store/reducers';
+import { FirestoreService } from '../../../services/firestore.service';
+import { Session } from '../../../models/session.model';
+
 import { Store } from '@ngrx/store';
-import { getSessionId, State } from '../../store/reducers';
-import { FirestoreService } from '../../services/firestore.service';
 import { map, startWith, switchMap } from 'rxjs/operators';
-import { Session } from '../../models/session.model';
 
 export interface SessionState {
     session: Session;
@@ -16,7 +18,7 @@ export const initialSessionState = {
 };
 
 @Injectable()
-export class SessionReactiveFacade {
+export class SessionViewReactiveFacade {
     vm$ = this.store.select(getSessionId)
         .pipe(
             switchMap((sessionId) => {

@@ -1,0 +1,43 @@
+.activity-card-container {
+    padding-bottom: 5px;
+}
+
+.activity-card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid lightgray;
+    border-radius: 8px;
+
+    &.selected {
+        border: 2px solid cornflowerblue;
+    }
+
+    &-type {
+        background-color: lightgray;
+        color: black;
+        padding-left: 4px;
+        font-size: 10px;
+
+        &.selected {
+            color: white;
+            background-color: cornflowerblue;
+        }
+    }
+
+    &-name {
+        font-size: 10px;
+        padding-left: 4px;
+    }
+}
+
+.activity-type {
+    background-color: cornflowerblue;
+    color: white;
+    padding-left: 4px;
+    font-size: 10px;
+}
+
+.activity-name {
+    font-size: 10px;
+    padding-left: 4px;
+}

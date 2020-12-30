@@ -1,0 +1,18 @@
+<div
+  *ngIf="activity"
+  class="activity-card-container"
+  (click)="onSelectActivity(activity.id!)"
+>
+  <div
+    class="activity-card"
+    [class.selected]="activity.id === selectedActivityId"
+  >
+    <div
+      class="activity-card-type"
+      [class.selected]="activity.id === selectedActivityId"
+    >
+      {{ activity.sequence }}. {{ activity.type }}
+    </div>
+    <div class="activity-card-name">{{ activity.name }}</div>
+  </div>
+</div>
