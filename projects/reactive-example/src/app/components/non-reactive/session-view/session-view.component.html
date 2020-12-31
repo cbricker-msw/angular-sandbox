@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <app-session-agenda-details
+      class="session-data"
+      [session]="session!">
+    </app-session-agenda-details>
+    <app-agenda-container
+      class="agenda-container"
+      [selectedActivityId]="selectedActivityId"
+      [activities]="activities"
+      (setSelectedActivity)="onSelectActivity($event)"
+    >
+    </app-agenda-container>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    Selected Activity
+  </mat-sidenav-content>
+</mat-sidenav-container>

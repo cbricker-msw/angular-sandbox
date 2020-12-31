@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { AgendaReactiveFacade } from './agenda-reactive.facade';
 import { Activity } from '../../../models/activity.model';
 
@@ -9,7 +9,7 @@ import { Activity } from '../../../models/activity.model';
     providers: [ AgendaReactiveFacade ],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AgendaReactiveComponent implements OnDestroy {
+export class AgendaReactiveComponent implements OnDestroy, OnChanges {
 
     vm$ = this.facade.vm$;
 
@@ -26,6 +26,10 @@ export class AgendaReactiveComponent implements OnDestroy {
 
     ngOnDestroy(): void {
         this.facade.setSelectedActivity('');
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log('AgendaReactiveComponent::ngOnChanges', changes);
     }
 
 }

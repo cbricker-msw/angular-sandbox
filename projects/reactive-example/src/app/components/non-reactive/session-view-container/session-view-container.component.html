@@ -1,0 +1,7 @@
+<app-session-view
+  [session]="session$ | async"
+  [activities]="(activities$ | async) || []"
+  [selectedActivityId]="(selectedActivityIdSubject.asObservable() | async) || ''"
+  (setSelectedActivity)="onSelectActivity($event)"
+>
+</app-session-view>

@@ -20,6 +20,8 @@ import { AgendaReactiveComponent } from './components/reactive/agenda-reactive/a
 import { AgendaActivityItemComponent } from './components/agenda-activity-item/agenda-activity-item.component';
 import { SessionViewContainerComponent } from './components/non-reactive/session-view-container/session-view-container.component';
 import { SessionViewComponent } from './components/non-reactive/session-view/session-view.component';
+import { AgendaContainerComponent } from './components/non-reactive/agenda-container/agenda-container.component';
+import { AgendaComponent } from './components/non-reactive/agenda/agenda.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +32,9 @@ import { SessionViewComponent } from './components/non-reactive/session-view/ses
         AgendaReactiveComponent,
         AgendaActivityItemComponent,
         SessionViewContainerComponent,
-        SessionViewComponent
+        SessionViewComponent,
+        AgendaContainerComponent,
+        AgendaComponent
     ],
     imports: [
         BrowserModule,

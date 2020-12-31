@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnChanges, SimpleChanges } from '@angular/core';
 import { SessionViewReactiveFacade } from './session-view-reactive.facade';
 
 @Component({
@@ -8,11 +8,15 @@ import { SessionViewReactiveFacade } from './session-view-reactive.facade';
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [ SessionViewReactiveFacade ]
 })
-export class SessionViewReactiveComponent {
+export class SessionViewReactiveComponent implements OnChanges {
 
     vm$ = this.facade.vm$;
 
     constructor(private facade: SessionViewReactiveFacade) {
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log('SessionViewReactive::ngOnChanges', changes);
     }
 
 }

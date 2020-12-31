@@ -1,0 +1,14 @@
+<div>
+  <h1>Agenda</h1>
+</div>
+<div *ngIf="activities.length === 0">
+  <h3>No activities found</h3>
+</div>
+<div *ngFor="let activity of activities; trackBy: trackByActivities">
+  <app-agenda-activity-item
+    [activity]="activity"
+    [selectedActivityId]="selectedActivityId"
+    (selectActivity)="onSelectActivity($event)"
+  >
+  </app-agenda-activity-item>
+</div>

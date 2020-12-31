@@ -1,0 +1,27 @@
+mat-sidenav-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+mat-sidenav {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    border: purple 1px solid;
+    width: 15%;
+}
+
+.session-data {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: green 1px solid;
+}
+
+.agenda-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: blue 1px solid;
+}
