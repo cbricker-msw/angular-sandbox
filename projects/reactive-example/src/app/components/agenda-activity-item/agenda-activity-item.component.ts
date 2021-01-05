@@ -21,7 +21,7 @@ export class AgendaActivityItemComponent implements OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges): void {
-        console.log(`${this.activity.name}::ngOnChanges`, changes);
+        console.log(`AgendaActivityItemComponent::ngOnChanges - ${this.activity.name}`, changes);
     }
 
 }

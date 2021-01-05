@@ -13,6 +13,9 @@
     </app-agenda-container>
   </mat-sidenav>
   <mat-sidenav-content>
-    Selected Activity
+    <app-activity-view-container
+      [selectedActivityId]="selectedActivityId"
+    >
+    </app-activity-view-container>
   </mat-sidenav-content>
 </mat-sidenav-container>

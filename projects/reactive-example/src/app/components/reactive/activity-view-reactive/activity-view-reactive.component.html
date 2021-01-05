@@ -1,0 +1,32 @@
+<ng-container *ngIf="(vm$ | async) as vm">
+  <div *ngIf="vm.isLoading">
+    Loading...
+  </div>
+  <div *ngIf="!vm.isLoading">
+    <div *ngIf="!vm.activity!.id">
+      No selected activity
+    </div>
+    <div *ngIf="!!vm.activity!.id">
+      <div class="detail">
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" [formControl]="name" [value]="vm.activity!.name">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-label>Sequence: {{ vm.activity!.sequence}}</mat-label>
+        </div>
+        <div>
+          <mat-label>Session ID: {{ vm.activity!.session_id}}</mat-label>
+        </div>
+        <div>
+          <mat-label>Type: {{ vm.activity!.type}}</mat-label>
+        </div>
+        <div>
+          <button (click)="updateName(vm.activity!.id)">Update Name</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

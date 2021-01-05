@@ -22,6 +22,12 @@ import { SessionViewContainerComponent } from './components/non-reactive/session
 import { SessionViewComponent } from './components/non-reactive/session-view/session-view.component';
 import { AgendaContainerComponent } from './components/non-reactive/agenda-container/agenda-container.component';
 import { AgendaComponent } from './components/non-reactive/agenda/agenda.component';
+import { ActivityViewReactiveComponent } from './components/reactive/activity-view-reactive/activity-view-reactive.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ActivityViewContainerComponent } from './components/non-reactive/activity-view-container/activity-view-container.component';
+import { ActivityViewComponent } from './components/non-reactive/activity-view/activity-view.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +40,10 @@ import { AgendaComponent } from './components/non-reactive/agenda/agenda.compone
         SessionViewContainerComponent,
         SessionViewComponent,
         AgendaContainerComponent,
-        AgendaComponent
+        AgendaComponent,
+        ActivityViewReactiveComponent,
+        ActivityViewContainerComponent,
+        ActivityViewComponent
     ],
     imports: [
         BrowserModule,
@@ -47,9 +56,12 @@ import { AgendaComponent } from './components/non-reactive/agenda/agenda.compone
         StoreRouterConnectingModule.forRoot(),
         StoreDevtoolsModule.instrument(),
         BrowserAnimationsModule,
+        ReactiveFormsModule,
 
         // Material Modules
         MatSidenavModule,
+        MatInputModule,
+        MatFormFieldModule
 
     ],
     providers: [

@@ -42,6 +42,10 @@ export class FirestoreService {
             );
     }
 
+    updateDocument<T>(path: string, data: T): Promise<void> {
+        return this.firestore.doc(path).update(data);
+    }
+
     private mapIdsToCollectionObjects<T>(actions: DocumentChangeAction<T>[]): T[] {
         return actions.map((action: DocumentChangeAction<T>) => {
             const data = action.payload.doc.data() as T;

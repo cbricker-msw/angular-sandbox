@@ -1,0 +1,25 @@
+<div class="detail">
+  <div *ngIf="!activity">
+    No selected activity
+  </div>
+  <div *ngIf="!!activity">
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" [formControl]="name" [value]="activity.name">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-label>Sequence: {{ activity?.sequence}}</mat-label>
+    </div>
+    <div>
+      <mat-label>Session ID: {{ activity?.session_id}}</mat-label>
+    </div>
+    <div>
+      <mat-label>Type: {{ activity?.type}}</mat-label>
+    </div>
+    <div>
+      <button (click)="changeName()">Update Name</button>
+    </div>
+  </div>
+</div>
