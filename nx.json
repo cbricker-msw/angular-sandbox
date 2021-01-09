@@ -1,0 +1,22 @@
+{
+  "npmScope": "parking-lot",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*",
+    "tsconfig.base.json": "*"
+  },
+  "projects": {
+    "parking-lot": {
+      "tags": []
+    },
+    "parking-lot-e2e": {
+      "tags": []
+    }
+  }
+}
