@@ -10,7 +10,7 @@ import { FormControl } from '@angular/forms';
 })
 export class ActivityViewComponent implements OnInit, OnChanges {
 
-    @Input() activity!: Activity;
+    @Input() activity!: Activity | null;
     @Output() updateName = new EventEmitter<string>();
 
     name = new FormControl('');
